@@ -3,6 +3,8 @@ import React from 'react'
 import { GoogleMap, useJsApiLoader, Marker, withGoogleMap} from '@react-google-maps/api';
 import {useState} from 'react'
 
+
+
 const containerStyle = {
   width: '1000px',
   height: '600px'
@@ -12,8 +14,6 @@ const center = {
   lat: -3.745,
   lng: -38.523
 };
-
-
 
 
 function MyComponent({setMarklat,setMarkLong}) {
@@ -35,7 +35,7 @@ function MyComponent({setMarklat,setMarkLong}) {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyDwNqypA_7ABIa3WZLdP8bLElV46GBv8_I"
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE
   })
 
   const [map, setMap] = React.useState(null)
